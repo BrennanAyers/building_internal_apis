@@ -13,8 +13,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    render json: item.update(item_params)
+  render json: Item.update(params[:id], item_params)
   end
 
   private

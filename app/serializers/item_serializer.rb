@@ -5,4 +5,6 @@ class ItemSerializer
   attribute :num_orders do |object|
     object.orders.count
   end
+
+  has_many :orders
 end

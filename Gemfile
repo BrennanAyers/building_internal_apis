@@ -37,7 +37,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'activesupport'
-
+  gem 'faker'
 end
 
 group :development do

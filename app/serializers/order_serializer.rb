@@ -2,5 +2,7 @@ class OrderSerializer
   include FastJsonapi::ObjectSerializer
   attributes :id, :order_number
 
-  has_many :items
-end
+  attribute :num_items do |object|
+      object.items.count
+    end
+  end

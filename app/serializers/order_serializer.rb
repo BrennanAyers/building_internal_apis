@@ -3,6 +3,6 @@ class OrderSerializer
   attributes :id, :order_number
 
   attribute :num_items do |object|
-      object.items.count
-    end
+    object.items.count
   end
+end

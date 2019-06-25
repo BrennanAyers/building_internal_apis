@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Items API" do
+describe "Orders API" do
   it "sends a list of orders" do
     create_list(:order, 3)
 
@@ -8,7 +8,7 @@ describe "Items API" do
 
     expect(response).to be_successful
 
-    orders = JSON.parse(response.body)
+    orders = JSON.parse(response.body)["data"]
 
     expect(orders.count).to eq(3)
   end
@@ -18,10 +18,10 @@ describe "Items API" do
 
     get "/api/v1/orders/#{id}"
 
-    order = JSON.parse(response.body)
+    order = JSON.parse(response.body)["data"]
 
     expect(response).to be_successful
-    expect(order["id"]).to eq(id)
+    expect(order["id"]).to eq(id.to_s)
   end
 
   # it "can create a new order" do
